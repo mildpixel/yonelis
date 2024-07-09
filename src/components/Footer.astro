@@ -27,73 +27,81 @@ import logo from "../assets/logo.png";
         </address>
     </Container>
     <Container classes="footer-bottom" fullBleed paddingBlock="4">
-        Tüm hakları saklıdır.
+        <span>Tüm hakları saklıdır.</span>
+        <br />
+
+        <span>
+            <a href="https://mildpixel.com" target="_blank"
+                ><strong>mild pixel</strong> software</a
+            ></span
+        >
     </Container>
-</Section>
 
-<style>
-    :global(.section-footer) {
-        background-color: #ffffff;
-    }
-    :global(.footer) {
-        background-color: #ffffff;
-        color: var(--gray-9);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
-    :global(.footer-bottom) {
-        text-align: center;
-        background-color: var(--brand-900);
-        font-size: var(--font-size-0);
-    }
-
-    @media (min-width: 500px) {
+    <style>
+        :global(.section-footer) {
+            background-color: #ffffff;
+        }
         :global(.footer) {
-            flex-direction: row;
+            background-color: #ffffff;
+            color: var(--gray-9);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
         }
-    }
+        :global(.footer-bottom) {
+            text-align: center;
+            background-color: var(--brand-900);
+            font-size: var(--font-size-0);
+        }
 
-    .footer__side {
-        flex: 1;
-    }
+        @media (min-width: 500px) {
+            :global(.footer) {
+                flex-direction: row;
+            }
+        }
 
-    img {
-        display: block;
-    }
+        .footer__side {
+            flex: 1;
+        }
 
-    address {
-        font-size: var(--font-size-0);
-        text-align: center;
-    }
+        img {
+            display: block;
+        }
 
-    @media (min-width: 500px) {
         address {
-            text-align: right;
+            font-size: var(--font-size-0);
+            text-align: center;
         }
-    }
 
-    a {
-        color: var(--brand-800);
-        text-decoration: none;
-    }
+        @media (min-width: 500px) {
+            address {
+                text-align: right;
+            }
+        }
 
-    ul {
-        padding: 0;
-        list-style: none;
-        text-align: center;
-    }
+        a {
+            color: var(--brand-800);
+            text-decoration: none;
+            display: block;
+            padding: var(--size-2);
+        }
 
-    ul a {
-        letter-spacing: var(--font-letterspacing-4);
-        color: var(--brand-900);
-        text-decoration: none;
-        text-transform: uppercase;
-    }
+        span a {
+            color: var(--brand-400);
+        }
 
-    a {
-        display: block;
-        padding: var(--size-2);
-    }
-</style>
+        ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        ul a {
+            letter-spacing: var(--font-letterspacing-4);
+            color: var(--brand-900);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    </style>
+</Section>
