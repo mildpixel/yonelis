@@ -17,6 +17,7 @@
     "astro-icon": "^1.1.0",
     "open-props": "^1.7.5",
     "postcss-jit-props": "^1.0.14",
+    "sharp": "^0.33.4",
     "typescript": "^5.5.3"
   }
 }

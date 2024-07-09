@@ -1,34 +1,34 @@
 ---
 export interface Props {
-  classes?: string;
-  paddingBlock?: string;
-  paddingInline?: string;
-  fullBleed?: boolean;
+    classes?: string;
+    paddingBlock?: string;
+    paddingInline?: string;
+    fullBleed?: boolean;
 }
 
 const { classes, paddingBlock, paddingInline, fullBleed } = Astro.props;
 
 const _style = {
-  paddingInline: `var(--size-${paddingInline})`,
-  paddingBlock: `var(--size-${paddingBlock})`,
-  width: fullBleed ? `100%` : "",
+    paddingInline: `var(--size-${paddingInline})`,
+    paddingBlock: `var(--size-${paddingBlock})`,
+    width: fullBleed ? `100%` : "",
 };
 ---
 
 <div
-  class={`container ${classes}`}
-  style={(paddingBlock || paddingInline || fullBleed) && _style}
+    class={`container ${classes}`}
+    style={((paddingBlock || paddingInline || fullBleed) && _style) || ""}
 >
-  <slot />
+    <slot />
 </div>
 
 <style>
-  .container {
-    color: white;
-    width: min(
-      100vw - var(--container-mobile-padding-inline),
-      var(--container-width)
-    );
-    margin-inline: auto;
-  }
+    .container {
+        color: white;
+        width: min(
+            100vw - var(--container-mobile-padding-inline),
+            var(--container-width)
+        );
+        margin-inline: auto;
+    }
 </style>
