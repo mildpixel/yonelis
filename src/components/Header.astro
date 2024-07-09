@@ -6,7 +6,7 @@ import logo from "../assets/logo-white.png";
 
 <header>
     <a href="/">
-        <Image src={logo} alt="Yonelis logo in white" width="120" />
+        <img src={logo.src} alt="Yonelis logo in white" />
     </a>
 </header>
 
@@ -24,6 +24,7 @@ import logo from "../assets/logo-white.png";
     }
     img {
         display: block;
+        width: var(--size-12);
     }
     a {
         text-decoration: none;
