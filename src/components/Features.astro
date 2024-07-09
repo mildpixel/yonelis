@@ -1,0 +1,114 @@
+---
+import { Icon } from "astro-icon/components";
+import Container from "./Container.astro";
+import Section from "./Section.astro";
+
+const features = [
+    {
+        title: "Yazıcı Sarf Malzemeleri",
+        description:
+            "En uygun fiyatlarla orijinal toner, kartuş ve şerit ihtiyaçlarınızı karşılıyoruz",
+        icon: "ic:sharp-invert-colors",
+    },
+    {
+        title: "Kurumsal Baskı Çözümleri",
+        description:
+            "Ofisiniz için gerekli olan A3 ve A4 boyutlarında baskı çözümleri sunuyoruz",
+        icon: "ic:outline-business-center",
+    },
+    {
+        title: "Fotokopi Sarf Malzemeleri",
+        description:
+            "Orijinal fotokopi tonerleri, drumları ve yazıcı yedek parçaları ",
+        icon: "ic:outline-wallpaper",
+    },
+    {
+        title: "Yazıcı Tedariği",
+        description:
+            "İhtiyaçlarınıza en uygun yazıcıları, en uygun fiyatlarla sizlere ulaştırıyoruz",
+        icon: "ic:outline-print",
+    },
+    {
+        title: "Ofis Elektroniği",
+        description:
+            "OEM, donanım ve ofiste ihtiyaç duyabileceğiniz her şeyi sağlıyoruz",
+        icon: "ic:outline-mouse",
+    },
+    {
+        title: "Yazıcı Kiralama",
+        description:
+            "Ofisiniz için en uygun yazıcı analizi yapılması ve kiralama",
+        icon: "ic:outline-discount",
+    },
+];
+---
+
+<Section classes="features-section">
+    <Container classes="features-container" paddingBlock="10" fullBleed>
+        <div class="features">
+            {
+                features.map((feature) => (
+                    <div class="features-card">
+                        <Icon name={feature.icon} />
+                        <div class="features-text">
+                            <h3>{feature.title}</h3>
+                            <p>{feature.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </Container>
+
+    <style>
+        :global(.features-section) {
+            background-image: url("../assets/blurry-gradient-haikei.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--size-6);
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        p {
+            color: var(--gray-3);
+        }
+
+        .features-card {
+            background-color: #1d2c4f;
+            padding: var(--size-7);
+            display: grid;
+            grid-template-columns: var(--size-10) 1fr;
+            flex: 0 1 400px;
+            box-shadow:
+                0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+                0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+                2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+                5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+            transition: transform 500ms;
+        }
+
+        .features-card:hover,
+        .features-card:focus {
+            transform: translateY(-10px);
+            transition: transform 250ms;
+        }
+
+        [data-icon] {
+            width: var(--size-4);
+            height: var(--size-5);
+            padding: var(--size-4);
+            border-radius: var(--radius-round);
+            background-color: #172541;
+            color: #fff;
+        }
+    </style>
+</Section>

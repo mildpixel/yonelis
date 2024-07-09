@@ -1,0 +1,61 @@
+---
+import Container from "./Container.astro";
+import Section from "./Section.astro";
+
+const activeYears = new Date().getFullYear() - 1994;
+---
+
+<Section backgroundColor="brand-800" id="hakkimizda">
+  <Container paddingBlock="10">
+    <p class="title">/ KURUMSAL</p>
+    <h2 class="headline">
+      {activeYears} yıllık deneyim <br />
+      <span>81 ilde</span> hizmet
+    </h2>
+    <p class="description">
+      Yıllardır hızla büyüyen firmamızın başarısının sırrını; müşteri odaklı
+      hizmet veren dinamik kadromuz, iş dünyasındaki değişime kolay ayak
+      uydurabilmemiz ve kullanıcılarımızın taleplerine hızlı cevap verebilmemize
+      olanak sağlayan güçlü stoğumuza borçluyuz.
+    </p>
+    <p class="description">
+      Önceliği müşteri memnuniyeti olan firmamız, konusunda uzman personeli ile
+      hizmet vermekte, geniş araç filomuz ile de sevkiyat bazında
+      müşterilerimizin her türlü ihtiyacını hızlı ve zamanında karşılamaktadır.
+      Bünyemizde barındırdığımız seçkin markalarımız, sürekli genişleyen müşteri
+      portföyümüz, doğru ve uygun fiyat politikamızla, tüm müşterilerimizin
+      ihtiyaç duyduğu kaliteli ürün ve hizmeti, en hızlı şekilde sağlamaktayız.
+    </p>
+  </Container>
+</Section>
+
+<style>
+  .title {
+    margin-top: var(--size-8);
+    letter-spacing: var(--font-letterspacing-4);
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 500px) {
+    .title {
+      margin-top: var(--size-12);
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: var(--font-size-fluid-3);
+    font-weight: var(--font-weight-1);
+    color: var(--gray-0);
+    line-height: var(--font-lineheight-1);
+  }
+
+  span {
+    font-weight: var(--font-weight-9);
+  }
+
+  p {
+    line-height: var(--font-lineheight-4);
+    color: var(--gray-0);
+  }
+</style>

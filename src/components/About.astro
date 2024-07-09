@@ -1,0 +1,105 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import Container from "./Container.astro";
+
+import hands from "../assets/hands.jpg";
+---
+
+<Container classes="about">
+    <div class="image-container">
+        <Image
+            src={hands}
+            alt="Four people grabbing each others wrists to make a square"
+            width="400"
+        />
+    </div>
+
+    <p class="description">
+        1994 senesinden itibaren sektörde aktif olarak çalışan Yöneliş
+        Bilgisayar, müşteri portföyünde bulunan 700’den fazla kurumsal firma ve
+        2000’i aşkın bayi kanalı ile Türkiye’nin orijinal kartuş, toner ve
+        donanım alanında önde gelen, güvenilir şirketlerindendir.
+    </p>
+
+    <p class="cta">
+        Bizimle beraber kazanmak için<br />
+        <a href="mailto:info@yonelis.com.tr"
+            >bayimiz olun. <Icon name="ic:outline-arrow-forward" />
+        </a>
+    </p>
+</Container>
+
+<style>
+    :global(.about) {
+        display: grid;
+        gap: var(--size-8);
+        grid-template-rows: repeat(2, 1fr);
+        margin-bottom: -40px;
+    }
+
+    .image-container {
+        display: none;
+        width: 100%;
+        background: var(--brand-900);
+    }
+
+    img {
+        display: none;
+        mix-blend-mode: luminosity;
+    }
+
+    .description {
+        line-height: var(--font-lineheight-4);
+        margin-block: 0;
+        margin-inline: auto;
+    }
+
+    .cta {
+        margin: 0;
+        background-color: var(--gray-0);
+        color: var(--brand-900);
+        font-weight: var(--font-weight-6);
+        font-size: var(--font-size-fluid-1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: var(--size-10);
+    }
+
+    @media (min-width: 600px) {
+        :global(.about) {
+            grid-template-columns: 1fr 2fr;
+            margin-bottom: -120px;
+        }
+
+        img {
+            display: block;
+            grid-row: span 2;
+        }
+
+        .image-container {
+            display: inline-block;
+            grid-row: span 2;
+        }
+    }
+
+    a {
+        color: var(--brand-600);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    [data-icon] {
+        width: var(--size-4);
+        height: var(--size-4);
+        padding: var(--size-1);
+    }
+
+    a:hover {
+        color: var(--brand-700);
+    }
+</style>

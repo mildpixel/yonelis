@@ -1,0 +1,104 @@
+---
+import Container from "./Container.astro";
+import Picture from "./Picture.astro";
+import Section from "./Section.astro";
+
+const brands = [
+    {
+        id: 0,
+        title: "HP",
+        src: "/src/assets/logos/hp.png",
+    },
+    {
+        id: 1,
+        title: "Oki",
+        src: "/src/assets/logos/oki.png",
+    },
+    {
+        id: 2,
+        title: "Xerox",
+        src: "/src/assets/logos/xerox.png",
+    },
+    {
+        id: 3,
+        title: "Canon",
+        src: "/src/assets/logos/canon.png",
+    },
+    {
+        id: 4,
+        title: "Epson",
+        src: "/src/assets/logos/epson.png",
+    },
+    {
+        id: 5,
+        title: "Lexmark",
+        src: "/src/assets/logos/lexmark.png",
+    },
+    {
+        id: 6,
+        title: "Kyocera",
+        src: "/src/assets/logos/kyocera.png",
+    },
+    {
+        id: 7,
+        title: "Ricoh",
+        src: "/src/assets/logos/ricoh.png",
+    },
+    {
+        id: 8,
+        title: "Minolta",
+        src: "/src/assets/logos/minolta.png",
+    },
+    {
+        id: 9,
+        title: "Riso",
+        src: "/src/assets/logos/riso.png",
+    },
+];
+---
+
+<Section classes="brands" id="markalar">
+    <Container classes="brands-container" paddingBlock="10">
+        <p class="title">/ MARKALAR</p>
+        <ul>
+            {
+                brands.map((brand) => (
+                    <li>
+                        <Picture alt={brand.title} src={brand.src} />
+                    </li>
+                ))
+            }
+        </ul>
+    </Container>
+</Section>
+
+<style>
+    :global(.brands) {
+        background-color: white;
+    }
+
+    :global(.brands-container) {
+        color: var(--gray-9);
+    }
+
+    .title {
+        margin: 0;
+        letter-spacing: var(--font-letterspacing-4);
+        padding-bottom: var(--size-8);
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--size-6);
+    }
+
+    li {
+        flex: 0 1 150px;
+    }
+</style>

@@ -1,0 +1,19 @@
+---
+export interface Props {
+    backgroundColor?: string;
+    color?: string;
+    classes?: string;
+    id?: string;
+}
+
+const { classes, backgroundColor, color, id } = Astro.props;
+
+const _style = {
+    backgroundColor: `var(--${backgroundColor})`,
+    color: `var(--${color})`,
+};
+---
+
+<section id={id} class={classes} style={(backgroundColor || color) && _style}>
+    <slot />
+</section>

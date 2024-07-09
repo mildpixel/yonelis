@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+
+import logo from "../assets/logo-white.png";
+---
+
+<header>
+    <a href="/">
+        <Image src={logo} alt="Yonelis logo in white" width="120" />
+    </a>
+</header>
+
+<style>
+    header {
+        width: min(
+            100vw - var(--container-mobile-padding-inline),
+            var(--container-width)
+        );
+        margin-inline: auto;
+        padding-block: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    img {
+        display: block;
+    }
+    a {
+        text-decoration: none;
+    }
+    span {
+        color: var(--gray-0);
+        font-weight: var(--font-weight-6);
+        font-size: var(--font-size-fluid-1);
+    }
+
+    [data-icon] {
+        color: var(--gray-0);
+        width: var(--size-6);
+        height: var(--size-6);
+        cursor: pointer;
+        padding: var(--size-1);
+        background-color: var(--gray-0);
+        color: var(--gray-9);
+    }
+
+    [data-icon]:hover {
+        background-color: var(--brand-300);
+    }
+</style>

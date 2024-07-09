@@ -1,0 +1,86 @@
+---
+import { Icon } from "astro-icon/components";
+import Container from "./Container.astro";
+import Section from "./Section.astro";
+---
+
+<Section classes="contact" id="iletisim">
+    <Container paddingBlock="10">
+        <p class="title">/ İLETİŞİM</p>
+        <div class="phone">
+            <p class="phone-text">
+                Size özel fiyatları öğrenmek için bizimle iletişime
+                geçebilirsiniz.
+            </p>
+            <a href="tel:+902124449585">
+                <Icon name="ic:baseline-phone" />
+                444 95 85</a
+            >
+        </div>
+    </Container>
+    <iframe
+        class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.7315626391396!2d28.950654615749958!3d41.052999024620036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab0b4b2b5f933%3A0xbdb32b5c607053f8!2zWcO2bmVsacWfIEJpbGdpc2F5YXI!5e0!3m2!1sen!2str!4v1661696560551!5m2!1sen!2str"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+</Section>
+
+<style>
+    .title {
+        letter-spacing: var(--font-letterspacing-4);
+        margin-bottom: 0;
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--size-6);
+    }
+    p {
+        color: var(--brand-900);
+        margin: 0;
+    }
+    a {
+        text-decoration: none;
+        color: var(--brand-900);
+        font-size: var(--font-size-fluid-2);
+        font-weight: var(--font-weight-9);
+    }
+    .phone {
+        background-color: #ffffff;
+        padding-block: var(--size-4);
+        padding-inline: var(--size-6);
+        text-align: center;
+    }
+    .phone-text {
+        font-size: var(--font-size-fluid-1);
+    }
+    @media (min-width: 500px) {
+        .phone {
+            padding-block: var(--size-8);
+            padding-inline: var(--size-12);
+        }
+    }
+    .map {
+        width: 100%;
+        display: block;
+        filter: grayscale();
+        transition: 1s filter;
+    }
+    .map:hover,
+    .map:focus {
+        filter: none;
+    }
+    :global(.contact) {
+        background-color: #fff;
+    }
+    [data-icon] {
+        width: var(--size-7);
+        height: var(--size-7);
+        border-radius: var(--radius-round);
+        color: var(--brand-900);
+    }
+</style>
